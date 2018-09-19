@@ -1,29 +1,28 @@
-void setup()
-{
-	noLoop();
+void setup() {
+  size(500,500);
 }
-void draw()
-{
-	//your code here
+dice bro = new dice(2,2);
+void draw() {
+  bro.show();
 }
-void mousePressed()
-{
-	redraw();
-}
-class Die //models one single dice cube
-{
-	//variable declarations here
-	
-	Die(int x, int y) //constructor
-	{
-		//variable initializations here
-	}
-	void roll()
-	{
-		//your code here
-	}
-	void show()
-	{
-		//your code here
-	}
+
+
+class dice {
+  int cubeX, cubeY, secretNumber;
+  dice(int x, int y) 
+  {
+    secretNumber = ((int)(Math.random()*6)+1);
+    cubeX = x;
+    cubeY = y;
+  }
+  void roll() {
+    redraw();
+  }
+
+  
+  void show() {
+    fill(222,184,135);
+    rect(cubeX,cubeY,(cubeX + 4),(cubeY +4));
+  }
+   
 }
