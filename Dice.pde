@@ -1,9 +1,15 @@
 void setup() {
   size(500,500);
 }
-dice bro = new dice(2,2);
+// doesnt show anything when i run it
+// fix
+
 void draw() {
+  for (int x = 0; x < 500; x = x + 5) {
+  dice bro = new dice(x, 500);
   bro.show();
+}
+  
 }
 
 
@@ -15,14 +21,26 @@ class dice {
     cubeX = x;
     cubeY = y;
   }
+  
   void roll() {
-    redraw();
+    if((Math.random() < .16)) {
+      ellipse(cubeX, cubeY, 5,5);
+    }
+    else if(Math.random() > .16 && Math.random() < .3) {
+      ellipse(cubeX - 1,cubeY - 1,5,5);
+      ellipse(cubeX + 1,cubeY + 1,5,5);
+    }
+    else if(Math.random() > .3 && Math.random() < .5) {
+      ellipse(cubeX - 1,cubeY - 1,5,5);
+      ellipse(cubeX + 1,cubeY + 1,5,5);
+      ellipse(cubeX,cubeY,5,5);
+    }
   }
 
   
   void show() {
     fill(222,184,135);
-    rect(cubeX,cubeY,(cubeX + 4),(cubeY +4));
+    rect(cubeX,cubeY,(cubeX + 4),(cubeY + 4));
   }
    
 }
