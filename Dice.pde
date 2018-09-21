@@ -3,6 +3,7 @@ boolean pepe = false;
 void setup() {
   size(1000,1000);
   noLoop();
+  textSize(46);
 }
 // 
 // fixed error
