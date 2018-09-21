@@ -30,7 +30,7 @@ void diceman() {
   total = total + bro.gameTime;
     }
  }
- System.out.println(total);
+ //System.out.println(total);
  fill(173,255,47);
  text(("total:" + total), 500, 950);
 }
